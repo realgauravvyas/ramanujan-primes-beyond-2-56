@@ -8,15 +8,12 @@ newly certified). Methodology notes:
 - **a(0)–a(56):** OEIS A190502 published data, taken from the official b-file
   (`data/b190502_known.txt`). Not recomputed here except as a validation check
   (see below).
-- **a(57)–a(63): DONE.** Freshly computed 2026-08-15, genuine single-pass
+- **a(57)–a(67): DONE.** Freshly computed 2026-08-15, genuine single-pass
   timings, no interruptions, no cache warm start beyond what the validation
   sweep below legitimately produced. Main anchors π(2ⁿ), π(2ⁿ⁻¹) independently
   cross-verified with two algorithms (Gourdon vs. Deleglise-Rivat) for every
-  term.
-- **a(64)–a(70): IN PROGRESS.** Currently computing. Placeholder rows only —
-  no values yet. This file and `data/b190502.txt` will be updated with
-  certified values and timings as each term completes; see the repo's commit
-  history for the live sequence of updates.
+  term. The run was deliberately stopped after a(67) certified — a(68) onward
+  is future work, not yet attempted.
 
 | n | a(n) | status |
 |---|---|---|
@@ -27,13 +24,30 @@ newly certified). Methodology notes:
 | 61 | 27,467,389,548,130,805 | certified |
 | 62 | 54,042,323,540,385,834 | certified |
 | 63 | 106,356,804,267,969,409 | certified |
-| 64 | — | in progress |
-| 65 | — | in progress |
-| 66 | — | in progress |
-| 67 | — | in progress |
-| 68 | — | in progress |
-| 69 | — | in progress |
-| 70 | — | in progress |
+| 64 | 209,366,672,181,778,359 | certified |
+| 65 | 412,246,861,431,389,466 | certified |
+| 66 | 811,916,554,998,178,377 | certified |
+| 67 | 1,599,434,686,587,771,626 | certified |
+
+## Timing
+
+Two figures matter here: the "compute" time logged per term (anchors + sieve
+walk + grid bracketing only) and the true wall-clock time including the
+parallel checkpoint prewarm step, which is not included in the per-term
+`seconds` field in `data/term_timings.csv` but is most of the real cost at
+this magnitude:
+
+| n | compute-only | true wall-clock (incl. prewarm) |
+|---|---|---|
+| 64 | 199s (3m19s) | ~22 min |
+| 65 | 303s (5m03s) | ~36 min |
+| 66 | 435s (7m15s) | ~48 min |
+| 67 | 788s (13m08s) | ~90 min |
+
+Growth per term is noticeably faster than the naive $x^{2/3}$ estimate once
+prewarm cost is counted — the checkpoint count itself is growing (14 → 16
+grid points, 32 → 38 prewarm targets from n=64 to n=67), compounding with the
+per-`primecount`-call cost increase.
 
 ## Validation against published data
 

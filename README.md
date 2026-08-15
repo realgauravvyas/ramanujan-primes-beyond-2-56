@@ -6,8 +6,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/a(57)--a(63)-certified-6C63FF?style=flat-square)
-![In progress](https://img.shields.io/badge/a(64)--a(70)-in%20progress-FFA500?style=flat-square)
+![Status](https://img.shields.io/badge/a(57)--a(67)-certified-6C63FF?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-6C63FF?style=flat-square)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white)
@@ -41,13 +40,10 @@ the certification method here is identical, only $Q=2^n$ instead of $Q=10^k$.
 | 61 | 27,467,389,548,130,805 | **new**, cross-algorithm verified |
 | 62 | 54,042,323,540,385,834 | **new**, cross-algorithm verified |
 | 63 | 106,356,804,267,969,409 | **new**, cross-algorithm verified |
-| 64 | — | ⏳ in progress |
-| 65 | — | ⏳ in progress |
-| 66 | — | ⏳ in progress |
-| 67 | — | ⏳ in progress |
-| 68 | — | ⏳ in progress |
-| 69 | — | ⏳ in progress |
-| 70 | — | ⏳ in progress |
+| 64 | 209,366,672,181,778,359 | **new**, cross-algorithm verified |
+| 65 | 412,246,861,431,389,466 | **new**, cross-algorithm verified |
+| 66 | 811,916,554,998,178,377 | **new**, cross-algorithm verified |
+| 67 | 1,599,434,686,587,771,626 | **new**, cross-algorithm verified |
 
 Full table, methodology, and per-term certificates: **[`certificates/`](certificates)**,
 narrative in **[`PUBLISHED_RESULTS.md`](PUBLISHED_RESULTS.md)**.
