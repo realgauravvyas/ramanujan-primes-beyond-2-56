@@ -1,0 +1,17 @@
+{
+ "sequence": "A190502",
+ "n": 59,
+ "Q": 576460752303423488,
+ "Q_repr": "2^59",
+ "pi_Q": 14458792895301660,
+ "pi_halfQ": 7357400267843990,
+ "f_at_Q": 7101392627457670,
+ "count": 7101392627457670,
+ "min_offset": 0,
+ "walk_width": 1000000000,
+ "grid_points": 10,
+ "window_end": 576460953902813532,
+ "seconds": 41,
+ "anchors_cross_verified": true,
+ "largest_R": 576460752303423389
+}
