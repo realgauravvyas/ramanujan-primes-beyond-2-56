@@ -6,7 +6,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/a(57)--a(67)-certified-6C63FF?style=flat-square)
+![Status](https://img.shields.io/badge/a(57)--a(72)-certified-6C63FF?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-6C63FF?style=flat-square)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white)
@@ -44,8 +44,13 @@ the certification method here is identical, only $Q=2^n$ instead of $Q=10^k$.
 | 65 | 412,246,861,431,389,466 | **new**, cross-algorithm verified |
 | 66 | 811,916,554,998,178,377 | **new**, cross-algorithm verified |
 | 67 | 1,599,434,686,587,771,626 | **new**, cross-algorithm verified |
+| 68 | 3,151,517,210,492,380,590 | **new**, cross-algorithm verified |
+| 69 | 6,211,093,021,215,415,074 | **new**, cross-algorithm verified |
+| 70 | 12,243,590,744,602,332,913 | **new**, cross-algorithm verified |
+| 71 | 24,140,116,236,766,772,570 | **new**, cross-algorithm verified |
+| 72 | 47,605,503,594,945,728,491 | **new**, cross-algorithm verified |
 
-Full table, methodology, and per-term certificates: **[`certificates/`](certificates)**,
+Computation deliberately stopped at a(72). Full table, methodology, and per-term certificates: **[`certificates/`](certificates)**,
 narrative in **[`PUBLISHED_RESULTS.md`](PUBLISHED_RESULTS.md)**.
 
 Also independently checked: **33 consecutive published terms, $n=20$–$52$, all
