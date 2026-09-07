@@ -53,7 +53,7 @@ the certification method here is identical, only $Q=2^n$ instead of $Q=10^k$.
 Computation deliberately stopped at a(72). Full table, methodology, and per-term certificates: **[`certificates/`](certificates)**,
 narrative in **[`PUBLISHED_RESULTS.md`](PUBLISHED_RESULTS.md)**.
 
-Also independently checked: **33 consecutive published terms, $n=20$–$n=52$, all
+Also independently checked: **33 consecutive published terms, `n=20`–`n=52`, all
 exact matches** against the OEIS b-file, exercising 137 grid-bracketing
 checkpoints — proof the method reproduces known data before it's trusted for
 new data.
@@ -122,7 +122,7 @@ term in `certificates/` should mostly be cache hits.
 ### ✅ Verified, not just computed
 
 - Anchors cross-checked by two independent `primecount` algorithms — exact agreement, every term
-- 33 consecutive published A190502 terms ($n=20$–$n=52$) independently reproduced, exact match
+- 33 consecutive published A190502 terms (`n=20`–`n=52`) independently reproduced, exact match
 - The base-2 anchor-sharing optimization never bypasses cross-verification: cached
   values must be marked verified before they can anchor a new term (`pi_verified.json`)
 - Dusart/Johnston bound formulas carried over unchanged from the already-verified
