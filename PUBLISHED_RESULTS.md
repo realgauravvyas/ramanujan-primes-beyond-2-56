@@ -1,7 +1,7 @@
 # A190502 a(57)–onward: values and timing for publication
 
 See `data/b190502.txt` for the merged machine-readable table (published +
-newly certified). Methodology notes:
+newly computed). Methodology notes:
 
 ## How each number was obtained
 
@@ -11,7 +11,7 @@ newly certified). Methodology notes:
 - **a(57)–a(72): DONE.** Computed 2026-08-15 through 2026-08-17. Main anchors
   π(2ⁿ), π(2ⁿ⁻¹) independently cross-verified with two algorithms (Gourdon vs.
   Deleglise-Rivat) for every term. Computation was deliberately stopped after
-  a(72) certified — this is the final term for now, a(73) onward is future
+  a(72) was computed — this is the final term for now, a(73) onward is future
   work, not yet attempted (its prewarm header had just printed when the run
   was stopped; no computation happened for it and nothing was cached).
 - **Reliability note:** three of these terms (a(69), and the two attempts
@@ -25,22 +25,22 @@ newly certified). Methodology notes:
 
 | n | a(n) | status |
 |---|---|---|
-| 57 | 1,838,131,803,685,114 | certified |
-| 58 | 3,612,389,083,130,022 | certified |
-| 59 | 7,101,392,627,457,670 | certified |
-| 60 | 13,964,301,601,651,670 | certified |
-| 61 | 27,467,389,548,130,805 | certified |
-| 62 | 54,042,323,540,385,834 | certified |
-| 63 | 106,356,804,267,969,409 | certified |
-| 64 | 209,366,672,181,778,359 | certified |
-| 65 | 412,246,861,431,389,466 | certified |
-| 66 | 811,916,554,998,178,377 | certified |
-| 67 | 1,599,434,686,587,771,626 | certified |
-| 68 | 3,151,517,210,492,380,590 | certified |
-| 69 | 6,211,093,021,215,415,074 | certified (crash-interrupted once, resumed cleanly) |
-| 70 | 12,243,590,744,602,332,913 | certified |
-| 71 | 24,140,116,236,766,772,570 | certified |
-| 72 | 47,605,503,594,945,728,491 | certified (crash-interrupted once, resumed cleanly) |
+| 57 | 1,838,131,803,685,114 | computed |
+| 58 | 3,612,389,083,130,022 | computed |
+| 59 | 7,101,392,627,457,670 | computed |
+| 60 | 13,964,301,601,651,670 | computed |
+| 61 | 27,467,389,548,130,805 | computed |
+| 62 | 54,042,323,540,385,834 | computed |
+| 63 | 106,356,804,267,969,409 | computed |
+| 64 | 209,366,672,181,778,359 | computed |
+| 65 | 412,246,861,431,389,466 | computed |
+| 66 | 811,916,554,998,178,377 | computed |
+| 67 | 1,599,434,686,587,771,626 | computed |
+| 68 | 3,151,517,210,492,380,590 | computed |
+| 69 | 6,211,093,021,215,415,074 | computed (crash-interrupted once, resumed cleanly) |
+| 70 | 12,243,590,744,602,332,913 | computed |
+| 71 | 24,140,116,236,766,772,570 | computed |
+| 72 | 47,605,503,594,945,728,491 | computed (crash-interrupted once, resumed cleanly) |
 
 ## Timing
 
@@ -84,7 +84,7 @@ the same machine used for the A181671 (base-10) extension through a(20).
 
 ## Method
 
-Certified via the bracketing lemma (see `README.md`): exact π(x) via
+Computed via the bracketing lemma (see `README.md`): exact π(x) via
 `primecount` at O(log) endpoints plus a small exact 128-bit sieve walk near Q,
 backed by the published Johnston (2022) and Dusart (2010) analytic tail
 bounds. Every new term additionally cross-verifies its record-defining

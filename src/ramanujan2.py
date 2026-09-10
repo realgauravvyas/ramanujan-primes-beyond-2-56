@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ramanujan2.py -- certified pi_R(2^n), i.e. OEIS A190502, for n far beyond 2^64.
+ramanujan2.py -- computes pi_R(2^n), i.e. OEIS A190502, for n far beyond 2^64.
 
     A190502(n) = number of Ramanujan primes <= 2^n
                = pi_R(2^n)
@@ -405,11 +405,11 @@ def walk(Q, L, S, verbose=True):
     return int(d["min_rel"]), int(d["min_off"]), int(d["end_rel"])
 
 
-# ------------------------------------------------------------ main certifier
+# ------------------------------------------------------------ main driver
 def certified_count(n, D=10**9, S=10**8, growth=1.7, threads=None,
                     primecount="primecount", verbose=True,
                     verify_anchors=False):
-    """Certified pi_R(2^n) = A190502(n).  Returns (count, info dict).
+    """Compute pi_R(2^n) = A190502(n).  Returns (count, info dict).
 
     verify_anchors=True cross-checks the two record-defining anchors
     (pi(Q), pi(Q/2)) with an independent algorithm -- use for genuinely new
@@ -508,7 +508,7 @@ def _write_notes(n, m, info):
             f.write(
                 f"OEIS A190502 publishes data through a({LAST_PUBLISHED}). "
                 "Everything recorded below is a new, first-time result computed "
-                "with `ramanujan2.py`, the base-2 driver for the certified "
+                "with `ramanujan2.py`, the base-2 driver for the "
                 "pi_R pipeline previously used to extend A181671 (pi_R(10^k)) "
                 "to k=23.\n\n"
                 "Method: pi_R(x) = min_{y>=x} f(y) with f(y) = pi(y) - pi(y/2). "
@@ -564,7 +564,7 @@ def finish_term(n, m, info, D, S, want_largest, primecount):
 
 
 def write_bfile(path=None):
-    """Merge published terms with everything certified here into a b-file."""
+    """Merge published terms with everything computed here into a b-file."""
     path = path or os.path.join(HERE, "b190502.txt")
     terms = dict(KNOWN)
     found = {}
@@ -593,7 +593,7 @@ def write_bfile(path=None):
 # ------------------------------------------------------------------- CLI
 def main():
     ap = argparse.ArgumentParser(
-        description="Certified A190502(n) = number of Ramanujan primes <= 2^n")
+        description="Compute A190502(n) = number of Ramanujan primes <= 2^n")
     ap.add_argument("mode", choices=["validate", "run", "explore", "bfile"])
     ap.add_argument("n", nargs="?", type=int, default=None,
                     help="base-2 exponent (Q = 2^n)")

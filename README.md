@@ -6,7 +6,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/a(57)--a(72)-certified-6C63FF?style=flat-square)
+![Status](https://img.shields.io/badge/a(57)--a(72)-computed-6C63FF?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-6C63FF?style=flat-square)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white)
@@ -19,12 +19,12 @@ A Ramanujan prime $R_n$ is the least integer such that $\pi(x) - \pi(x/2) \geq n
 for all $x \geq R_n$ — Ramanujan's own 1919 strengthening of Bertrand's postulate.
 [OEIS A190502](https://oeis.org/A190502) tabulates how many such primes lie below
 each power of two, $A190502(n) = \pi_R(2^n)$, and publishes real data only through
-$n=56$. This repo pushes that further — certified, cross-verified, and reproducible.
+$n=56$. This repo pushes that further — computed, cross-checked, and reproducible.
 
 This is the base-2 sibling of
 [`ramanujan-primes-beyond-1e19`](https://github.com/realgauravvyas/ramanujan-primes-beyond-1e19),
 which extended the base-10 sequence [A181671](https://oeis.org/A181671) to $10^{23}$;
-the certification method here is identical, only $Q=2^n$ instead of $Q=10^k$.
+the method here is identical, only $Q=2^n$ instead of $Q=10^k$.
 
 ---
 
@@ -50,12 +50,12 @@ the certification method here is identical, only $Q=2^n$ instead of $Q=10^k$.
 | 71 | 24,140,116,236,766,772,570 | **new**, cross-algorithm verified |
 | 72 | 47,605,503,594,945,728,491 | **new**, cross-algorithm verified |
 
-Computation deliberately stopped at a(72). Full table, methodology, and per-term certificates: **[`certificates/`](certificates)**,
+Computation deliberately stopped at a(72). Full table, methodology, and per-term computation records: **[`certificates/`](certificates)**,
 narrative in **[`PUBLISHED_RESULTS.md`](PUBLISHED_RESULTS.md)**.
 
 Also independently checked: **33 consecutive published terms, `n=20`–`n=52`, all
 exact matches** against the OEIS b-file, exercising 137 grid-bracketing
-checkpoints — proof the method reproduces known data before it's trusted for
+checkpoints — evidence that the method reproduces known data before it is trusted for
 new data.
 
 ---
@@ -64,8 +64,8 @@ new data.
 
 $\pi_R(x) = \min_{y \geq x} f(y)$ with $f(y) = \pi(y) - \pi(y/2)$, for *any* $x$
 — nothing in that identity requires $x$ to be a power of ten, so the exact same
-machinery that certified A181671 certifies A190502 with $Q=2^n$ instead. Direct
-sieving is infeasible at this scale — the certification window spans far more
+machinery used for A181671 applies to A190502 with $Q=2^n$ instead. Direct
+sieving is infeasible at this scale — the bracketing window spans far more
 than the $2^{64}$ limit of general-purpose sieve libraries. Instead:
 
 1. **Bracketing lemma** — exact $\pi(x)$ at $O(\log)$ grid endpoints
@@ -74,7 +74,7 @@ than the $2^{64}$ limit of general-purpose sieve libraries. Instead:
 2. **Custom 128-bit segmented sieve** (`sieve128.cpp`) — handles the small region
    immediately above $Q$ exactly.
 3. **Analytic tail bounds** — [Dusart (2010)](https://arxiv.org/abs/1002.0442) and
-   [Johnston (2022)](https://arxiv.org/abs/2109.02249) certify everything beyond
+   [Johnston (2022)](https://arxiv.org/abs/2109.02249) bound everything beyond
    the sieved-and-bracketed region, for free (valid to $1.101\times10^{26}$, which
    caps this method at roughly $n\approx86$).
 4. **Cross-algorithm verification** — every new term's defining anchors are
@@ -93,7 +93,7 @@ than the $2^{64}$ limit of general-purpose sieve libraries. Instead:
 | path | contents |
 |---|---|
 | `src/` | `ramanujan2.py` (orchestration driver), `sieve128.cpp` (128-bit sieve), `build.sh` |
-| `certificates/` | Machine-checkable JSON certificates, one per term |
+| `certificates/` | Per-term JSON computation records (values, anchors, timings) |
 | `data/` | `pi_cache.json` (every exact π(x) computed), `pi_verified.json` (which were cross-checked), b-file, timings |
 | `PUBLISHED_RESULTS.md` | Term-by-term methodology and provenance notes |
 
